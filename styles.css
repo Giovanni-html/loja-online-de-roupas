@@ -78,9 +78,61 @@ header nav ul li::after {
   width: 0px;
   height: 4px;
   background-color: #e99724;
-  transition: width 0.5s ease;
+  transition: width 0.2s ease;
 }
 
 header nav ul li:hover:after {
   width: 100%;
 }
+
+.container {
+  height: 100dvh;
+  position: relative;
+  background: #587a74;
+  background: linear-gradient(
+    343deg,
+    rgba(88, 122, 116, 1) 0%,
+    rgba(122, 80, 58, 1) 62%
+  );
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: #facd9b;
+  background: radial-gradient(
+    circle,
+    rgba(250, 205, 155, 1) 0%,
+    rgba(122, 80, 58, 1) 78%
+  );
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(100px);
+  z-index: 1;
+  animation: pulse 4s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+.itens-carrocel {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.item;
