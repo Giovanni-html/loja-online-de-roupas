@@ -88,12 +88,6 @@ header nav ul li:hover:after {
 .container {
   height: 100dvh;
   position: relative;
-  background: #587a74;
-  background: linear-gradient(
-    343deg,
-    rgba(88, 122, 116, 1) 0%,
-    rgba(122, 80, 58, 1) 62%
-  );
   overflow: hidden;
 }
 
@@ -110,7 +104,7 @@ header nav ul li:hover:after {
   );
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%);
   filter: blur(100px);
   z-index: 1;
@@ -135,4 +129,51 @@ header nav ul li:hover:after {
   position: relative;
 }
 
-.item;
+.item {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.ativo {
+  opacity: 1;
+}
+
+.produto-img {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.produto-img img {
+  max-width: 80%;
+  max-height: 60%;
+  filter: drop-shadow(0 0 30px rgba(250, 205, 155, 1));
+}
+
+.produto-tag {
+  font-family: "Bebas Neue", sans-serif;
+  z-index: 2;
+}
+
+.produto-nome {
+  font-family: "DM Serif Text", serif;
+  z-index: 2;
+}
+
+.preço {
+  font-family: "Bebas Neue", sans-serif;
+  z-index: 2;
+}
+
+.cmp {
+  font-family: "Bebas Neue", sans-serif;
+  z-index: 2;
+}
