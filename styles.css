@@ -36,3 +36,51 @@ body {
   font-size: 16px;
   overflow: hidden;
 }
+
+header {
+  width: 90vw;
+  top: 0;
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+.logo {
+  font-family: "Pacifico", cursive;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #facd9b;
+  text-shadow: 0 0 15px #000;
+}
+
+header nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 5px 0px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  color: #facd9b;
+  text-shadow: 0 0 15px #000;
+}
+
+header nav ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0px;
+  height: 4px;
+  background-color: #e99724;
+  transition: width 0.5s ease;
+}
+
+header nav ul li:hover:after {
+  width: 100%;
+}
