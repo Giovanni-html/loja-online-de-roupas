@@ -96,12 +96,6 @@ header nav ul li:hover:after {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: #facd9b;
-  background: radial-gradient(
-    circle,
-    rgba(250, 205, 155, 1) 0%,
-    rgba(122, 80, 58, 1) 78%
-  );
   position: absolute;
   top: 50%;
   left: 40%;
@@ -155,25 +149,178 @@ header nav ul li:hover:after {
 .produto-img img {
   max-width: 80%;
   max-height: 60%;
-  filter: drop-shadow(0 0 30px rgba(250, 205, 155, 1));
+  filter: drop-shadow(0 0 30px rgba(250, 206, 155, 0.418));
+}
+
+.conteúdo {
+  width: 55%;
+  padding-right: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2;
 }
 
 .produto-tag {
   font-family: "Bebas Neue", sans-serif;
-  z-index: 2;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #da993e;
+  border-radius: 30px;
+  border-radius: 30px; /* mudar cor */
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
 .produto-nome {
   font-family: "DM Serif Text", serif;
-  z-index: 2;
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
 .preço {
   font-family: "Bebas Neue", sans-serif;
-  z-index: 2;
+  font-size: 1.5rem;
 }
 
 .cmp {
   font-family: "Bebas Neue", sans-serif;
+  padding: 12px 16px;
+  background: linear-gradient(90deg, #facd9b, #e99724);
+  border-radius: 30px;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 200;
+  cursor: pointer;
+  border: none;
+}
+
+.passadores {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.passador-uni {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #7a503a;
+  border: 1px solid #e99724;
+}
+
+.passador-uni:hover {
+  background-color: #e99724;
+  border-color: #facd9b;
+}
+
+.indicadores-pagina {
+  position: absolute;
+  bottom: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+.numero-pg {
+  font-family: "Pacifico", cursive;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e99724;
+}
+
+.pontos {
+  display: flex;
+  gap: 10px;
+}
+
+.ponto {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(146, 96, 38, 0.493);
+  border-radius: 5px;
+}
+
+.ponto.ativa {
+  background-color: #e99724;
+  box-shadow: #e9972459;
+}
+
+.decoração {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circulo {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #e99724dc;
+  z-index: 5;
+}
+
+.circulo:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 5%;
+}
+
+.circulo:nth-child(2) {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 90%;
+}
+
+.circulo:nth-child(3) {
+  width: 150px;
+  height: 150px;
+  top: 70%;
+  left: 5%;
+}
+
+.fundos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fundo {
+  position: absolute;
+  align-items: center;
+}
+
+.fundo:nth-child(1) {
+  width: 1900px;
+  height: 880px;
+  background-color: #facd9b;
+}
+
+.fundo:nth-child(2) {
+  width: 1340px;
+  height: 420px;
+  left: 14.5%;
+  top: 28%;
+  background-color: #7a503a;
   z-index: 2;
 }
