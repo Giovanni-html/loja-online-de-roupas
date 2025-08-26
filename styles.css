@@ -85,6 +85,16 @@ header nav ul li:hover:after {
   width: 100%;
 }
 
+.conta {
+  border: none;
+  background: none;
+  color: #facd9b;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  text-shadow: 0 0 15px #000;
+  cursor: pointer;
+}
+
 .container {
   height: 100dvh;
   position: relative;
