@@ -396,7 +396,7 @@ header nav ul li:hover:after {
 
 .container-conta {
   position: absolute;
-  top: 50%;
+  top: 43%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
@@ -425,6 +425,18 @@ header nav ul li:hover:after {
   text-align: center;
 }
 
+.shape-register {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #e6b074;
+  display: flex;
+  align-items: center;
+  color: #332118;
+  text-align: center;
+}
+
 form {
   width: 100%;
 }
@@ -442,7 +454,7 @@ form {
 
 .input input {
   width: 80%;
-  padding: 15px;
+  padding: 15px 35px 15px 15px;
   border: none;
   border-radius: 15px;
   outline: none;
@@ -457,7 +469,78 @@ form {
   color: #332118b0;
 }
 
-.input svg {
+.nome-usuario {
   position: absolute;
-  right: 20px;
+  right: 55px;
+  top: 33%;
+  font-size: 1.5rem;
+}
+
+.n-usuario {
+  position: absolute;
+  right: 55px;
+  top: 28%;
+  font-size: 1.5rem;
+}
+
+.senha-usuario {
+  position: absolute;
+  right: 55px;
+  top: 48%;
+  font-size: 1.5rem;
+}
+
+.s-usuario {
+  position: absolute;
+  right: 55px;
+  top: 58%;
+  font-size: 1.5rem;
+}
+
+.email {
+  position: absolute;
+  right: 55px;
+  top: 43%;
+  font-size: 1.5rem;
+}
+
+.esqueceu-senha {
+  margin: -10px 0 10px;
+}
+
+.esqueceu-senha a {
+  text-decoration: none;
+  color: #332118;
+  font-family: "DM Serif Text", serif;
+  font-size: 18px;
+}
+
+.Entrar {
+  font-family: "Bebas Neue", sans-serif;
+  width: 80%;
+  padding: 12px 16px;
+  margin: 5px 0 5px;
+  background: linear-gradient(90deg, #facd9b, #e99724);
+  border-radius: 10px;
+  color: #332118;
+  font-size: 1rem;
+  font-weight: 200;
+  cursor: pointer;
+  border: none;
+}
+
+.entre-com {
+  font-size: 18px;
+  color: #332118;
+  font-family: "DM Serif Text", serif;
+  margin: 5px 0 5px;
+}
+
+.midias-sociais svg:nth-child(1) {
+  display: inline-flex;
+  color: #e6b074;
+  padding: 8px;
+  border: 2px solid #7a503a;
+  border-radius: 14px;
+  background: #332118;
 }
