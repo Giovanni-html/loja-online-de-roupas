@@ -197,7 +197,7 @@ header nav ul li:hover:after {
   text-transform: uppercase;
   color: #da993e;
   border-radius: 30px;
-  border-radius: 30px; /* mudar cor */
+  border-radius: 30px;
   font-weight: 600;
   letter-spacing: 2px;
   margin-bottom: 20px;
@@ -392,4 +392,23 @@ header nav ul li:hover:after {
   top: 28%;
   background-color: #7a503a;
   z-index: 2;
+}
+
+.container-conta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: none;
+  width: 850px;
+  height: 550px;
+  background-color: #e99724;
+  border-radius: 30px;
+}
+
+.container-conta.mostrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

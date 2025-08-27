@@ -1,5 +1,5 @@
 const prevButton = document.getElementById("prev");
-const nexttButton = document.getElementById("next");
+const nextButton = document.getElementById("next");
 const itens = document.querySelectorAll(".item");
 const pontos = document.querySelectorAll(".ponto");
 const numero = document.querySelector(".numero-pg");
@@ -42,6 +42,19 @@ prevButton.addEventListener("click", function () {
   update(-1);
 });
 
-nexttButton.addEventListener("click", function () {
+nextButton.addEventListener("click", function () {
   update(1);
+});
+
+const botaoAbir = document.getElementById("abrir-popup");
+const popupConta = document.querySelector(".container-conta ");
+
+botaoAbir.addEventListener("click", () => {
+  popupConta.classList.add("mostrar");
+});
+
+window.addEventListener("click", (event) => {
+  if (!popupConta.contains(event.target) && event.target !== botaoAbir) {
+    popupConta.classList.remove("mostrar");
+  }
 });
