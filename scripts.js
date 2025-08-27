@@ -58,3 +58,14 @@ window.addEventListener("click", (event) => {
     popupConta.classList.remove("mostrar");
   }
 });
+
+const containerConta = document.querySelector(".container-conta");
+const registerBtn = document.querySelector(".register-btn");
+const loginBtn = document.querySelector(".login-btn");
+
+registerBtn.addEventListener("click", () => {
+  containerConta.classList.add("ativo");
+});
+loginBtn.addEventListener("click", () => {
+  containerConta.classList.remove("ativo");
+});
