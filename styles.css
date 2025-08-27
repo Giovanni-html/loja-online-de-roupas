@@ -403,7 +403,7 @@ header nav ul li:hover:after {
   display: none;
   width: 850px;
   height: 550px;
-  background-color: #e99724;
+  background-color: #332118;
   border-radius: 30px;
 }
 
@@ -411,4 +411,53 @@ header nav ul li:hover:after {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.shape-login {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #e6b074;
+  display: flex;
+  align-items: center;
+  color: #332118;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+}
+
+.container-conta h1 {
+  font-size: 3.5rem;
+  font-family: "Pacifico", cursive;
+  text-shadow: 2px 1px 0 #7a503a;
+  margin: -10px 0;
+}
+
+.input {
+  margin: 30px 0;
+}
+
+.input input {
+  width: 80%;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  background-color: #fff;
+  font-size: 15px;
+  color: #000;
+  font-weight: 500;
+}
+
+.input input::placeholder {
+  font-weight: 400;
+  color: #332118b0;
+}
+
+.input svg {
+  position: absolute;
+  right: 20px;
 }
