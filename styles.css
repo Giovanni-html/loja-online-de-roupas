@@ -64,10 +64,7 @@ header nav ul li {
   cursor: pointer;
   position: relative;
   padding: 5px 0px;
-  font-family: "Bebas Neue", sans-serif;
   font-size: 2rem;
-  color: #facd9b;
-  text-shadow: 0 0 15px #000;
 }
 
 header nav ul li::after {
@@ -85,7 +82,7 @@ header nav ul li:hover:after {
   width: 100%;
 }
 
-.conta {
+.area-conta {
   border: none;
   background: none;
   color: #facd9b;
@@ -93,6 +90,13 @@ header nav ul li:hover:after {
   font-size: 2rem;
   text-shadow: 0 0 15px #000;
   cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  font-family: "Bebas Neue", sans-serif;
+  color: #facd9b;
+  text-shadow: 0 0 15px #000;
 }
 
 .container {
