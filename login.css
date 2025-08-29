@@ -1,0 +1,276 @@
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "DM Serif Text", serif;
+}
+
+.ativo {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.container-conta {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: none;
+  width: 850px;
+  height: 550px;
+  background-color: #e6b074;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.container-conta.mostrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shape {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #332118;
+  text-align: center;
+  transition: 0.6s ease-in-out 1.2s, visibility 0s 1s;
+}
+
+.container-conta.ativo .shape {
+  right: 50%;
+}
+
+.shape.login {
+  visibility: visible;
+}
+
+.container-conta.ativo .shape.login {
+  visibility: hidden;
+}
+
+.shape.register {
+  visibility: hidden;
+}
+
+.container-conta.ativo .shape.register {
+  visibility: visible;
+}
+
+.shape-ativo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.shape-ativo::before {
+  content: "";
+  position: absolute;
+  left: -150%;
+  width: 200%;
+  height: 100%;
+  border-radius: 150px;
+  background: #332118;
+  transition: 1.8s ease-in-out;
+}
+
+.container-conta.ativo .shape-ativo::before {
+  left: 50%;
+}
+
+.painel-ativo {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  color: #e6b074;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.6s ease-in-out 0.6s;
+  pointer-events: auto;
+}
+
+.painel-ativo.ativo-esquerda {
+  left: 0;
+  transition-delay: 0.8s;
+}
+
+.container-conta.ativo .painel-ativo.ativo-esquerda {
+  left: -50%;
+  transition-delay: 0.7s;
+}
+
+.painel-ativo.ativo-direita {
+  right: -50%;
+  transition-delay: 0.7s;
+}
+
+.container-conta.ativo .painel-ativo.ativo-direita {
+  right: 0;
+  transition-delay: 0.8s;
+}
+
+.painel-ativo p {
+  margin: 20px 0 20px;
+}
+
+.painel-ativo .btn {
+  width: 160px;
+  height: 46px;
+  background: transparent;
+  border: 2px solid #da993e;
+  box-shadow: none;
+  border-radius: 15px;
+  color: #e6b074;
+  cursor: pointer;
+}
+
+.painel-ativo.ativo-esquerda {
+  z-index: 2;
+}
+
+.painel-ativo .btn:hover {
+  background-color: #da993e;
+  color: #332118;
+}
+
+form {
+  width: 100%;
+}
+
+.container-conta h1 {
+  font-size: 3.5rem;
+  font-family: "Pacifico", cursive;
+  text-shadow: 2px 1px 0 #7a503a;
+  margin: -10px 0;
+}
+
+.input {
+  margin: 30px 0;
+}
+
+.input input {
+  width: 80%;
+  padding: 15px 35px 15px 15px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  background-color: #fff;
+  font-size: 15px;
+  color: #000;
+  font-weight: 500;
+}
+
+.input input::placeholder {
+  font-weight: 400;
+  color: #332118b0;
+}
+
+.nome-usuario {
+  position: absolute;
+  right: 55px;
+  top: 33%;
+  font-size: 1.5rem;
+}
+
+.n-usuario {
+  position: absolute;
+  right: 55px;
+  top: 28%;
+  font-size: 1.5rem;
+}
+
+.senha-usuario {
+  position: absolute;
+  right: 55px;
+  top: 48%;
+  font-size: 1.5rem;
+}
+
+.s-usuario {
+  position: absolute;
+  right: 55px;
+  top: 58%;
+  font-size: 1.5rem;
+}
+
+.email {
+  position: absolute;
+  right: 55px;
+  top: 43%;
+  font-size: 1.5rem;
+}
+
+.esqueceu-senha {
+  margin: -10px 0 10px;
+}
+
+.esqueceu-senha a {
+  text-decoration: none;
+  color: #332118;
+  font-family: "DM Serif Text", serif;
+  font-size: 18px;
+}
+
+.Entrar {
+  font-family: "Bebas Neue", sans-serif;
+  width: 80%;
+  padding: 12px 16px;
+  margin: 5px 0 5px;
+  background: linear-gradient(90deg, #facd9b, #e99724);
+  border-radius: 10px;
+  color: #332118;
+  font-size: 1rem;
+  font-weight: 200;
+  cursor: pointer;
+  border: none;
+}
+
+.entre-com {
+  font-size: 18px;
+  color: #332118;
+  font-family: "DM Serif Text", serif;
+  margin: 5px 0 5px;
+}
+
+.midias-sociais svg:nth-child(1) {
+  display: inline-flex;
+  color: #e6b074;
+  padding: 8px;
+  border: 2px solid #7a503a;
+  border-radius: 14px;
+  background: #332118;
+}
