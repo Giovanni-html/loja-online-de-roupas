@@ -1,71 +1,65 @@
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 const itens = document.querySelectorAll(".item");
-const pontos = document.querySelectorAll(".ponto");
-const numero = document.querySelector(".numero-pg");
-const list = document.querySelector(".itens-carrocel");
 
-let ativo = 0;
-const total = itens.length;
-let timer;
+if (prevButton && nextButton && itens.length > 0) {
+  const pontos = document.querySelectorAll(".ponto");
+  const numero = document.querySelector(".numero-pg");
+  let ativo = 0;
+  const total = itens.length;
+  let timer;
 
-function update(direction) {
-  document.querySelector(".item.ativo").classList.remove("ativo");
-  document.querySelector(".ponto.ativo").classList.remove("ativo");
+  const updateCarousel = (direction) => {
+    clearInterval(timer);
 
-  if (direction > 0) {
-    ativo = ativo + 1;
+    document.querySelector(".item.ativo").classList.remove("ativo");
+    document.querySelector(".ponto.ativo").classList.remove("ativo");
 
-    if (ativo === total) {
-      ativo = 0;
+    if (direction > 0) {
+      ativo = (ativo + 1) % total;
+    } else {
+      ativo = (ativo - 1 + total) % total;
     }
-  } else if (direction < 0) {
-    ativo = ativo - 1;
 
-    if (ativo < 0) {
-      ativo = total - 1;
-    }
-  }
+    itens[ativo].classList.add("ativo");
+    pontos[ativo].classList.add("ativo");
+    numero.textContent = ativo + 1;
 
-  itens[ativo].classList.add("ativo");
-  pontos[ativo].classList.add("ativo");
+    timer = setInterval(() => updateCarousel(1), 5000);
+  };
 
-  numero.textContent = ativo + 1;
+  prevButton.addEventListener("click", () => {
+    updateCarousel(-1);
+  });
+
+  nextButton.addEventListener("click", () => {
+    updateCarousel(1);
+  });
+
+  timer = setInterval(() => updateCarousel(1), 5000);
 }
 
-clearInterval(timer);
-timer = setInterval(() => {
-  update(1);
-}, 5000);
-
-prevButton.addEventListener("click", function () {
-  update(-1);
-});
-
-nextButton.addEventListener("click", function () {
-  update(1);
-});
-
-const botaoAbir = document.getElementById("abrir-popup");
-const popupConta = document.querySelector(".container-conta ");
-
-botaoAbir.addEventListener("click", () => {
-  popupConta.classList.add("mostrar");
-});
-
-window.addEventListener("click", (event) => {
-  if (!popupConta.contains(event.target) && event.target !== botaoAbir) {
-    popupConta.classList.remove("mostrar");
-  }
-});
-
-const containerConta = document.querySelector(".container-conta");
+const botaoAbrir = document.getElementById("abrir-popup");
+const popupConta = document.querySelector(".container-conta");
 const registerBtn = document.querySelector(".register-btn");
 const loginBtn = document.querySelector(".login-btn");
 
-registerBtn.addEventListener("click", () => {
-  containerConta.classList.add("ativo");
-});
-loginBtn.addEventListener("click", () => {
-  containerConta.classList.remove("ativo");
-});
+if (botaoAbrir && popupConta && registerBtn && loginBtn) {
+  botaoAbrir.addEventListener("click", () => {
+    popupConta.classList.add("mostrar");
+  });
+
+  window.addEventListener("click", (event) => {
+    if (!popupConta.contains(event.target) && event.target !== botaoAbrir) {
+      popupConta.classList.remove("mostrar");
+    }
+  });
+
+  registerBtn.addEventListener("click", () => {
+    popupConta.classList.add("ativo");
+  });
+
+  loginBtn.addEventListener("click", () => {
+    popupConta.classList.remove("ativo");
+  });
+}
