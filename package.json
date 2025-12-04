@@ -1,0 +1,25 @@
+{
+  "name": "the-new-era",
+  "version": "1.0.0",
+  "description": "Loja online de roupas - The New Era",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"node server.js\" \"live-server --port=8080 --host=localhost --open=/index.html --watch=./ --ignore=node_modules\"",
+    "frontend": "live-server --port=8080 --host=localhost --open=/index.html --watch=./ --ignore=node_modules",
+    "backend": "node server.js"
+  },
+  "keywords": ["loja", "roupas", "ecommerce"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "concurrently": "^8.2.2"
+  }
+}

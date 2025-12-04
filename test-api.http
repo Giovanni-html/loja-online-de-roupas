@@ -1,0 +1,36 @@
+### The New Era - API Tests
+### Use a extensão REST Client no VS Code para testar
+
+### 1. Registrar novo usuário
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+  "username": "teste",
+  "email": "teste@email.com",
+  "password": "senha123"
+}
+
+###
+
+### 2. Fazer login
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+  "username": "teste",
+  "password": "senha123"
+}
+
+###
+
+### 3. Obter perfil (substitua SEU_TOKEN pelo token recebido no login)
+GET http://localhost:3000/api/profile
+Authorization: Bearer SEU_TOKEN
+
+###
+
+### 4. Listar todos os usuários
+GET http://localhost:3000/api/users
+
+###

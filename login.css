@@ -174,7 +174,7 @@ form {
 .container-conta h1 {
   font-size: 3.5rem;
   font-family: "Pacifico", cursive;
-  text-shadow: 2px 1px 0 #7a503a;
+  text-shadow: 2px 1px 0 "#7a503a";
   margin: -10px 0;
 }
 
@@ -185,18 +185,29 @@ form {
 .input input {
   width: 80%;
   padding: 15px 35px 15px 15px;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 15px;
   outline: none;
   background-color: #fff;
   font-size: 15px;
   color: #000;
   font-weight: 500;
+  transition: border 0.3s ease, background-color 0.3s ease;
 }
 
 .input input::placeholder {
   font-weight: 400;
   color: #332118b0;
+}
+
+.input.error input {
+  border: 2px solid #e74c3c;
+  background-color: rgba(231, 76, 60, 0.2);
+}
+
+.input.error input::placeholder {
+  color: #e74c3c;
+  font-weight: 500;
 }
 
 .nome-usuario {
@@ -218,6 +229,12 @@ form {
   right: 55px;
   top: 48%;
   font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.senha-usuario:hover {
+  color: #e99724;
 }
 
 .s-usuario {
@@ -225,6 +242,12 @@ form {
   right: 55px;
   top: 58%;
   font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.s-usuario:hover {
+  color: #e99724;
 }
 
 .email {
@@ -273,4 +296,139 @@ form {
   border: 2px solid #7a503a;
   border-radius: 14px;
   background: #332118;
+}
+
+/* Mobile Responsivo */
+@media (max-width: 768px) {
+  .container-conta {
+    width: 90%;
+    max-width: 380px;
+    height: auto;
+    min-height: 550px;
+    padding: 20px;
+    top: 50%;
+  }
+
+  .shape {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 20px 10px;
+    right: auto !important;
+    visibility: visible !important;
+  }
+
+  .shape.login {
+    display: block;
+  }
+
+  .container-conta.ativo .shape.login {
+    display: none;
+  }
+
+  .shape.register {
+    display: none;
+  }
+
+  .container-conta.ativo .shape.register {
+    display: block;
+  }
+
+  .shape-ativo {
+    display: none;
+  }
+
+  .painel-ativo {
+    display: none;
+  }
+
+  .container-conta h1 {
+    font-size: 2.2rem;
+    margin: 10px 0 20px;
+  }
+
+  .input {
+    margin: 15px 0;
+    position: relative;
+  }
+
+  .input input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    font-size: 15px;
+  }
+
+  .nome-usuario {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .n-usuario {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .senha-usuario {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .s-usuario {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .email {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .Entrar {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .entre-com {
+    font-size: 15px;
+    margin: 15px 0 10px;
+  }
+
+  .midias-sociais {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .midias-sociais a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .midias-sociais svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .esqueceu-senha {
+    margin: 10px 0 15px;
+  }
+
+  .esqueceu-senha a {
+    font-size: 15px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
