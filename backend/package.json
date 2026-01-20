@@ -1,0 +1,20 @@
+{
+  "name": "the-new-era-backend",
+  "version": "1.0.0",
+  "description": "Backend da loja online de roupas - The New Era",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "keywords": ["loja", "roupas", "ecommerce", "backend", "api"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "cors": "^2.8.5"
+  }
+}

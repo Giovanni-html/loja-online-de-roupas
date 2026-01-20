@@ -2,20 +2,31 @@
 
 ## 🚀 Como Iniciar o Projeto
 
-### Opção 1: Usando npm (Recomendado)
+### Instalação
 ```bash
-npm install
-npm start
+# Instalar todas as dependências (raiz + backend + frontend)
+npm run install:all
 ```
 
-### Opção 2: Usando o script batch (Windows)
+### Opção 1: Iniciar tudo junto (Recomendado para desenvolvimento)
 ```bash
-start.bat
+npm run dev
 ```
+Isso inicia o backend (porta 3000) e o frontend com live-reload (porta 8080).
 
-### Opção 3: Usando o script shell
+### Opção 2: Iniciar apenas o backend
 ```bash
-./start.sh
+npm run backend
+```
+O site estará disponível em `http://localhost:3000`
+
+### Opção 3: Iniciar frontend e backend separadamente
+```bash
+# Terminal 1 - Backend
+npm run backend
+
+# Terminal 2 - Frontend (com live-reload)
+npm run frontend
 ```
 
 ## ✨ Funcionalidades
@@ -29,9 +40,9 @@ start.bat
 
 ## 🌐 URLs do Projeto
 
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:3000/api
-- **Banco de Dados**: SQLite (database.db)
+- **Aplicação (via backend)**: http://localhost:3000
+- **Frontend Dev (live-reload)**: http://localhost:8080
+- **API REST**: http://localhost:3000/api
 
 ## 📡 Rotas da API
 
@@ -48,7 +59,7 @@ start.bat
 - `POST /api/login` - Fazer login
   ```json
   {
-    "username": "usuario",
+    "email": "email@exemplo.com",
     "password": "senha123"
   }
   ```
@@ -86,16 +97,29 @@ start.bat
 
 ```
 .
-├── index.html          # Página principal
-├── styles.css          # Estilos principais + responsivo
-├── login.css           # Estilos do modal de login
-├── scripts.js          # JavaScript do carrossel + API
-├── server.js           # Backend Node.js + Express
-├── database.db         # Banco de dados SQLite
-├── package.json        # Dependências do projeto
-├── img/                # Imagens dos produtos
-├── font/               # Fontes customizadas
-└── start.bat/start.sh  # Scripts de inicialização
+├── frontend/                # Código do frontend
+│   ├── index.html           # Página principal
+│   ├── css/
+│   │   ├── styles.css       # Estilos principais + responsivo
+│   │   └── login.css        # Estilos do modal de login
+│   ├── js/
+│   │   └── scripts.js       # JavaScript do carrossel + API
+│   ├── assets/
+│   │   ├── img/             # Imagens dos produtos
+│   │   └── fonts/           # Fontes customizadas
+│   └── package.json         # Dependências do frontend
+│
+├── backend/                 # Código do backend
+│   ├── src/
+│   │   └── server.js        # Servidor Express + API
+│   ├── data/
+│   │   └── database.db      # Banco de dados SQLite
+│   └── package.json         # Dependências do backend
+│
+├── package.json             # Scripts de conveniência (raiz)
+├── README.md                # Esta documentação
+├── start.bat                # Script Windows
+└── start.sh                 # Script Linux/Mac
 ```
 
 ## 🎨 Breakpoints Responsivos
@@ -112,12 +136,19 @@ start.bat
 ## 🔧 Instalação das Dependências
 
 ```bash
-npm install
+# Instalar tudo de uma vez
+npm run install:all
+
+# Ou instalar separadamente
+npm install                  # Raiz
+cd backend && npm install    # Backend
+cd frontend && npm install   # Frontend
 ```
 
 ## 🗄️ Banco de Dados
 
 O banco de dados SQLite é criado automaticamente na primeira execução.
+Localização: `backend/data/database.db`
 
 ### Estrutura da Tabela `users`
 ```sql
@@ -139,7 +170,7 @@ CREATE TABLE users (
 
 ## 📝 Notas
 
-- O servidor roda na porta `3000`
-- O backend serve os arquivos estáticos do frontend
+- O backend roda na porta `3000`
+- O frontend dev (com live-reload) roda na porta `8080`
 - Para parar o servidor, pressione `Ctrl+C` no terminal
 - O banco de dados é criado automaticamente no primeiro uso

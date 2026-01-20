@@ -12,10 +12,10 @@ const JWT_SECRET = 'the-new-era-secret-key-2024';
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static('.'));
+app.use(express.static(path.join(__dirname, '../../frontend')));
 
 // Conectar ao banco de dados SQLite
-const db = new sqlite3.Database('./database.db', (err) => {
+const db = new sqlite3.Database(path.join(__dirname, '../data/database.db'), (err) => {
   if (err) {
     console.error('❌ Erro ao conectar ao banco de dados:', err.message);
   } else {

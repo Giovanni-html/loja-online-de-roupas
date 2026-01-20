@@ -1,38 +1,35 @@
 @echo off
-chcp 65001 >nul
-cls
-
-echo ======================================
-echo   Iniciando The New Era - Full Stack
-echo ======================================
+echo ========================================
+echo   The New Era - Loja Online de Roupas
+echo ========================================
 echo.
 
-REM Verifica se o Node.js está instalado
+:: Verificar se Node.js está instalado
 where node >nul 2>nul
-if %ERRORLEVEL% NEQ 0 (
-    echo ❌ Node.js não encontrado!
+if %errorlevel% neq 0 (
+    echo [ERRO] Node.js nao encontrado!
     echo Por favor, instale o Node.js: https://nodejs.org/
     pause
     exit /b 1
 )
 
-REM Verifica se as dependências estão instaladas
-if not exist "node_modules\" (
-    echo 📦 Instalando dependências...
+echo [INFO] Node.js encontrado: 
+node --version
+echo.
+
+:: Verificar se as dependencias estao instaladas
+if not exist "backend\node_modules" (
+    echo [INFO] Instalando dependencias do backend...
+    cd backend
     call npm install
+    cd ..
 )
 
-echo 🚀 Iniciando servidores...
-echo 📂 Diretório: %CD%
-echo 🌐 Frontend: http://localhost:3000
-echo 📡 Backend API: http://localhost:3000/api
-echo 🗄️  Banco de dados: SQLite (database.db)
 echo.
-echo ✨ O servidor irá recarregar automaticamente ao salvar arquivos
-echo ⏹️  Pressione Ctrl+C para parar os servidores
-echo.
-echo ======================================
+echo [INFO] Iniciando o servidor backend...
+echo [INFO] Acesse: http://localhost:3000
+echo [INFO] Pressione Ctrl+C para parar
 echo.
 
-REM Inicia o servidor backend (que também serve o frontend)
-node server.js
+cd backend
+node src/server.js

@@ -1,0 +1,14 @@
+{
+  "name": "the-new-era-frontend",
+  "version": "1.0.0",
+  "description": "Frontend da loja online de roupas - The New Era",
+  "scripts": {
+    "dev": "npx live-server --port=8080 --host=localhost --open=/index.html"
+  },
+  "keywords": ["loja", "roupas", "ecommerce", "frontend"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

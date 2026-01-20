@@ -1,34 +1,33 @@
 #!/bin/bash
 
-echo "======================================"
-echo "  Iniciando The New Era - Full Stack"
-echo "======================================"
+echo "========================================"
+echo "  The New Era - Loja Online de Roupas"
+echo "========================================"
 echo ""
 
-# Verifica se o Node.js está instalado
+# Verificar se Node.js está instalado
 if ! command -v node &> /dev/null; then
-    echo "❌ Node.js não encontrado!"
+    echo "[ERRO] Node.js não encontrado!"
     echo "Por favor, instale o Node.js: https://nodejs.org/"
     exit 1
 fi
 
-# Verifica se as dependências estão instaladas
-if [ ! -d "node_modules" ]; then
-    echo "📦 Instalando dependências..."
+echo "[INFO] Node.js encontrado: $(node --version)"
+echo ""
+
+# Verificar se as dependencias estao instaladas
+if [ ! -d "backend/node_modules" ]; then
+    echo "[INFO] Instalando dependências do backend..."
+    cd backend
     npm install
+    cd ..
 fi
 
-echo "🚀 Iniciando servidores..."
-echo "📂 Diretório: $(pwd)"
-echo "🌐 Frontend: http://localhost:3000"
-echo "📡 Backend API: http://localhost:3000/api"
-echo "🗄️  Banco de dados: SQLite (database.db)"
 echo ""
-echo "✨ O servidor irá recarregar automaticamente ao salvar arquivos"
-echo "⏹️  Pressione Ctrl+C para parar os servidores"
-echo ""
-echo "======================================"
+echo "[INFO] Iniciando o servidor backend..."
+echo "[INFO] Acesse: http://localhost:3000"
+echo "[INFO] Pressione Ctrl+C para parar"
 echo ""
 
-# Inicia o servidor backend (que também serve o frontend)
-node server.js
+cd backend
+node src/server.js
